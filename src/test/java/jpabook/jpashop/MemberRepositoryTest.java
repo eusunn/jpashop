@@ -33,9 +33,9 @@ public class MemberRepositoryTest {
         //then
         Assertions.assertThat(findMember.getId()).isEqualTo(findMember.getId());
         Assertions.assertThat(findMember.getUsername()).isEqualTo(findMember.getUsername());
-
         Assertions.assertThat(findMember).isEqualTo(member);
-
+        System.out.println("findMember == member : " + (findMember == member)); //true
+        // 같은 트렌젝션안에서 저장되면 영속성 컨텍스트가 같을 것 그래서 아이디값이 같으면 같은 엔티티로 인식한다.
     }
 
 }
