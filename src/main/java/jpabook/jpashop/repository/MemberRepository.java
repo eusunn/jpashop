@@ -31,7 +31,7 @@ public class MemberRepository {
         // 우리가 사용한 것은 엔티티 객체를 대상으로 쿼리를 하는것 (엘리어스를 m으로 두고 엔티티 member를 조회해)
     }
     public List<Member> findByName(String name){
-        return em.createQuery("slect m from Member m where m.name = :name", Member.class)
+        return em.createQuery("select m from Member m where m.name = :name", Member.class)
                 .setParameter("name", name)
                 .getResultList();
     }
